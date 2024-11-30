@@ -91,7 +91,7 @@ async def on_raw_reaction_add(event: discord.RawReactionActionEvent):
         #if embed and embed.image.url:  # Check if the embed has an image
         #print(str(embed))
         await message.reply(
-            message.content
+            "💎\n" + message.content
         )
 
     add_message_to_db(message.id)
