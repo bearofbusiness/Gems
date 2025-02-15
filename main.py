@@ -82,9 +82,11 @@ async def on_raw_reaction_add(event: discord.RawReactionActionEvent):
     # Ensure the message has an image attachment
     if message.attachments:
         attachment = message.attachments[0]
+
         file = await attachment.to_file()
+        file.spoiler = attachment.is_spoiler()
         await message.reply(
-            "💎", file=file
+            "💎", file=file,
         )
     elif message.embeds:
         embed = message.embeds[0]
