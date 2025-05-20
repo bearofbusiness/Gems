@@ -16,7 +16,6 @@ intents.message_content = True
 intents.guild_messages = True
 intents.reactions = True
 
-
 bot = commands.Bot(command_prefix="!", intents=intents)
 db = {
         "gem_reacted_messages": [],
