@@ -51,8 +51,6 @@ async def on_raw_reaction_add(event: discord.RawReactionActionEvent):
 
     emoji = event.emoji
 
-    print(str(emoji))
-
     if str(emoji) == "💎":
 
         gem_count = 0
@@ -88,13 +86,9 @@ async def on_raw_reaction_add(event: discord.RawReactionActionEvent):
     elif "coal" in emoji.name:
         coal_count = 0
         for reaction in message.reactions:
-            print(reaction.emoji)
             if str(reaction.emoji) == str(emoji):
                 coal_count = reaction.count
                 break
-
-        print(coal_count)
-
 
         if coal_count >= 5:
             if message.attachments:
